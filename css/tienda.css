@@ -1,0 +1,461 @@
+/* ==========================================================================
+   REFRIAIRE INTEGRAL - TIENDA (CATALOG) STYLES (v2 GRID LAYOUT)
+   ========================================================================== */
+
+/* Breadcrumb & Header */
+.tienda-header {
+  background-color: var(--color-bg-light);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+.tienda-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+@media (min-width: 768px) {
+  .tienda-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Main Shop Layout */
+.tienda-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0 5rem;
+}
+
+@media (min-width: 1024px) {
+  .tienda-layout {
+    grid-template-columns: 270px 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FILTER SIDEBAR (LG COLOMBIA STYLE)
+   -------------------------------------------------------------------------- */
+.filters-sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .filters-sidebar {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+}
+
+.filters-panel {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1.25rem;
+}
+
+.filters-header-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-clear-filters {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.btn-clear-filters:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Accordion Filter Groups */
+.filter-group {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 1rem 0;
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.filter-group-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  text-align: left;
+}
+
+.filter-group-header svg {
+  color: var(--color-text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.filter-group.is-collapsed .filter-group-header svg {
+  transform: rotate(-90deg);
+}
+
+.filter-group-content {
+  margin-top: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.filter-group.is-collapsed .filter-group-content {
+  display: none;
+}
+
+/* Checkbox Style */
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--transition-fast);
+}
+
+.filter-checkbox-label:hover {
+  color: var(--color-primary);
+}
+
+.checkbox-custom-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.checkbox-custom-wrap input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.filter-count {
+  font-size: 0.75rem;
+  color: var(--color-text-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   TOOLBAR (SORT, COUNT, MOBILE FILTER BTN)
+   -------------------------------------------------------------------------- */
+.tienda-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .tienda-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.results-count {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.results-count strong {
+  color: #0F172A;
+}
+
+.toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .toolbar-controls {
+    width: auto;
+  }
+}
+
+/* Sort Select */
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+@media (min-width: 640px) {
+  .sort-wrapper {
+    flex: none;
+  }
+}
+
+.sort-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .sort-label {
+    display: inline-block;
+  }
+}
+
+.sort-select {
+  padding: 0.5rem 2rem 0.5rem 0.875rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.sort-select:focus {
+  border-color: var(--color-primary);
+}
+
+/* Mobile Filter Trigger Button */
+.btn-mobile-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .btn-mobile-filter {
+    display: none;
+  }
+}
+
+/* Active Filter Chips */
+.active-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.active-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 170, 219, 0.3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+}
+
+.active-filter-chip button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   PRODUCT GRID (VERTICAL COMPACT CARDS - LG COLOMBIA STYLE)
+   -------------------------------------------------------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 540px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1350px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 comfortable columns beside 270px filter panel */
+  }
+}
+
+/* Pagination */
+.tienda-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3.5rem;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.pagination-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pagination-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE FILTER MODAL / DRAWER
+   -------------------------------------------------------------------------- */
+.filter-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 1300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 88%;
+  max-width: 360px;
+  background-color: var(--color-white);
+  z-index: 1350;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-drawer.is-open {
+  transform: translateX(0);
+}
+
+.filter-drawer-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.filter-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-drawer-body {
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.filter-drawer-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-light);
+  display: flex;
+  gap: 0.75rem;
+}
